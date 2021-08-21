@@ -109,7 +109,10 @@ function main() {
     createDOMElement() {
       this.rootElement = document.createElement('div');
       this.imgElement = document.createElement('img');
-      this.rootElement.className = 'card';
+      this.rootElement.classList.add('card');
+      this.rootElement.addEventListener('click', () => {
+        window.location.href = this.descriptor.url;
+      });
       this.rootElement.appendChild(this.imgElement);
     }
 
