@@ -14,3 +14,47 @@ a {
 * {
   box-sizing: border-box;
 }
+
+body {
+  background: black;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grid-container {
+  user-select: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.grid-container:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.card img {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.card {
+  transition: opacity 0.5s;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  width: 474px;
+  height: 474px;
+}
+
+.card.hidden {
+  opacity: 0;
+}
