@@ -2,7 +2,6 @@
     "images": [
         {
             "id": 0,
-            "url": "product-1",
             "heading": "striped top",
             "spacing": 1.4,
             "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6010642abe743a739486b5a2_RockBackg1-p-500.jpeg"

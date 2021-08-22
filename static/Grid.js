@@ -117,9 +117,11 @@ function main() {
       this.imgElement = document.createElement('img');
       this.rootElement.classList.add('card');
       this.rootElement.classList.add(`card-${this.descriptor.url}`);
-      this.rootElement.addEventListener('click', () => {
-        window.location.href = `product?path=${this.descriptor.url}`;
-      });
+      if (!!this.descriptor.url) {
+        this.rootElement.addEventListener('click', () => {
+          window.location.href = `product?path=${this.descriptor.url}`;
+        });
+      }
       this.rootElement.appendChild(this.imgElement);
     }
 

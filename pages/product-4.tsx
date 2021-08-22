@@ -13,7 +13,7 @@ const ProductOne: NextPage = () => {
         products.forEach((element: any) => {
             if (element.url === window.location.pathname.split('/')[1]) {
                 setHeading(element.heading)
-                setImageUrl(element.thumb_src)
+                setImageUrl(element.imageUrl)
             }
         });
     }, [])
