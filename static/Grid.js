@@ -79,12 +79,12 @@ function main() {
     }
 
     isTouch() {
-      return (
-        'ontouchstart' in window ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0
-      );
-      // false;
+      // return (
+      //   'ontouchstart' in window ||
+      //   navigator.maxTouchPoints > 0 ||
+      //   navigator.msMaxTouchPoints > 0
+      // );
+      false;
     }
 
     bind() {
@@ -97,6 +97,8 @@ function main() {
         el.addEventListener('mousedown', this.onStart.bind(this), false);
         el.addEventListener('mousemove', this.onMove.bind(this), false);
         el.addEventListener('mouseup', this.onEnd.bind(this), false);
+
+        el.addEventListener('onmousemove', () => console.log('moving'));
       }
     }
   }
@@ -149,8 +151,6 @@ function main() {
 
     update() {
       let cssBatch = '';
-
-      console.log('root', this.rootElement.className);
 
       let updateValueX;
       let updateValueY;
