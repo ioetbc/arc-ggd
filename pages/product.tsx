@@ -11,7 +11,9 @@ const ProductOne: NextPage = () => {
     useEffect(() => {
         const products = json.images
         products.forEach((element: any) => {
-            if (element.url === window.location.pathname.split('/')[1]) {
+            console.log(element.url)
+            console.log(window.location.search.split('?')[1])
+            if (element.url === window.location.search.split('?')[1].split('=')[1]) {
                 setHeading(element.heading)
                 setImageUrl(element.thumb_src)
             }

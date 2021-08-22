@@ -1,4 +1,5 @@
-const GALLERY_JSON = '/static/gallery.json';
+const GALLERY_JSON =
+  'https://raw.githubusercontent.com/ioetbc/arc-ggd/main/static/gallery.json';
 const CARD_WIDTH = 474;
 const CARD_HEIGHT = 474;
 const FIXED_ROWS = 4;
@@ -14,6 +15,7 @@ const NEIGHBOURS = [
   [-1, -1], // upper left
   [1, -1], // upper right
 ];
+
 function main() {
   function LoadJSON(url, callback) {
     let req = new XMLHttpRequest();
@@ -110,8 +112,9 @@ function main() {
       this.rootElement = document.createElement('div');
       this.imgElement = document.createElement('img');
       this.rootElement.classList.add('card');
+      this.rootElement.classList.add(`card-${this.descriptor.url}`);
       this.rootElement.addEventListener('click', () => {
-        window.location.href = this.descriptor.url;
+        window.location.href = `product?path=${this.descriptor.url}`;
       });
       this.rootElement.appendChild(this.imgElement);
     }
