@@ -118,7 +118,7 @@ function main() {
       this.rootElement.classList.add('card');
       this.rootElement.classList.add(`card-${this.descriptor.url}`);
       this.imgElement.style = `box-shadow: 0 19px ${
-        38 * (this.descriptor.spacing * 2)
+        38 * this.descriptor.spacing
       }px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22)`;
       if (!!this.descriptor.url) {
         this.rootElement.addEventListener('click', () => {
