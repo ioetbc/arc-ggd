@@ -98,7 +98,7 @@ function main() {
         el.addEventListener('mousemove', this.onMove.bind(this), false);
         el.addEventListener('mouseup', this.onEnd.bind(this), false);
 
-        el.addEventListener('onmousemove', () => console.log('moving'));
+        el.addEventListener('mousemove', () => console.log('moving'));
       }
     }
   }
