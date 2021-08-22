@@ -4,7 +4,7 @@
       "id": 23,
       "heading": "x",
       "type": "video",
-      "spacing": 10,
+      "spacing": 1,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/60102cf6f7575575a9355d75_burning car reversed 2-transcode.mp4"
     },
     {
@@ -63,7 +63,7 @@
     {
       "id": 8,
       "heading": "x",
-      "spacing": 10,
+      "spacing": 1,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcdee27ae8926596819_path5119.png"
     },
     {
@@ -135,13 +135,13 @@
     {
       "id": 21,
       "heading": "x",
-      "spacing": 10,
+      "spacing": 1,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcb62dde007a2cdbedc_g1901.png"
     },
     {
       "id": 22,
       "heading": "x",
-      "spacing": 10,
+      "spacing": 1,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcb8a6e609904051b3a_g2042-p-500.png"
     }
   ]
