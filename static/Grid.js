@@ -79,12 +79,12 @@ function main() {
     }
 
     isTouch() {
-      // return (
-      //   'ontouchstart' in window ||
-      //   navigator.maxTouchPoints > 0 ||
-      //   navigator.msMaxTouchPoints > 0
-      // );
-      false;
+      return (
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      );
+      // false;
     }
 
     bind() {
@@ -149,9 +149,34 @@ function main() {
 
     update() {
       let cssBatch = '';
-      cssBatch += `transform: translate3d(${this.x * 2}px, ${
-        this.y * 2
-      }px, 0);`;
+
+      console.log('root', this.rootElement.className);
+
+      let updateValueX;
+      let updateValueY;
+
+      if (this.rootElement.className === 'card card-product-1') {
+        updateValueX = this.x * 1.4;
+        updateValueY = this.y * 1.4;
+      }
+      if (this.rootElement.className === 'card card-product-2') {
+        updateValueX = this.x * 1.3;
+        updateValueY = this.y * 1.3;
+      }
+      if (this.rootElement.className === 'card card-product-3') {
+        updateValueX = this.x * 1.2;
+        updateValueY = this.y * 1.2;
+      }
+      if (this.rootElement.className === 'card card-product-4') {
+        updateValueX = this.x * 1.3;
+        updateValueY = this.y * 1.3;
+      }
+      if (this.rootElement.className === 'card card-product-5') {
+        updateValueX = this.x * 1.5;
+        updateValueY = this.y * 1.5;
+      }
+
+      cssBatch += `transform: translate3d(${updateValueX}px, ${updateValueY}px, 0);`;
       //   cssBatch += 'display:' + (this._visible ? 'block;' : 'none;');
 
       this.rootElement.setAttribute('style', cssBatch);

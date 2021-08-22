@@ -5,7 +5,7 @@ import Script from 'next/script'
 const Home: NextPage = () => {
   return (
     <>
-    <script type="text/javascript" src="https://combinatronics.com/ioetbc/arc-ggd/main/static/Grid.js"></script>
+    <Script type="text/javascript" src="/static/Grid.js" />
     <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" />
     <div className={styles.container}>
       <Head>

@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['lp.arket.com'],
+    domains: ['lp.arket.com', 'uploads-ssl.webflow.com'],
   },
 };
