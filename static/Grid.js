@@ -97,9 +97,6 @@ function main() {
         el.addEventListener('mousedown', this.onStart.bind(this), false);
         el.addEventListener('mousemove', this.onMove.bind(this), false);
         el.addEventListener('mouseup', this.onEnd.bind(this), false);
-        // el.addEventListener('mousemove', () => {
-        //   this.onMove.bind(this)
-        //   ), false);
       }
     }
   }
@@ -114,12 +111,19 @@ function main() {
 
     createDOMElement() {
       this.rootElement = document.createElement('div');
-      this.imgElement = document.createElement('img');
+      if (this.descriptor.type === 'video') {
+        this.imgElement = document.createElement('video');
+        this.imgElement.setAttribute('autoPlay', true);
+        this.imgElement.setAttribute('loop', true);
+        this.imgElement.setAttribute('muted', true);
+      } else {
+        this.imgElement = document.createElement('img');
+      }
       this.rootElement.classList.add('card');
       this.rootElement.classList.add(`card-${this.descriptor.url}`);
       if (!!this.descriptor.url) {
         this.rootElement.addEventListener('click', () => {
-          window.location.href = `product?path=${this.descriptor.url}`;
+          window.location.href = `${this.descriptor.url}`;
         });
       }
       this.rootElement.appendChild(this.imgElement);
@@ -129,6 +133,7 @@ function main() {
       let { imgElement } = this;
       if (imgElement.src !== this.descriptor.imageUrl) {
         imgElement.src = this.descriptor.imageUrl;
+
         imgElement.onload = () => {
           this.update();
           this.rootElement.classList.toggle('hidden', false);
