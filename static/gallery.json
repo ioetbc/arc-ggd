@@ -5,35 +5,35 @@
             "url": "product-1",
             "heading": "striped top",
             "spacing": 1.4,
-            "thumb_src": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6010642abe743a739486b5a2_RockBackg1-p-500.jpeg"
+            "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6010642abe743a739486b5a2_RockBackg1-p-500.jpeg"
         },
         {
             "id": 1,
             "url": "product-2",
             "heading": "grey jumper",
             "spacing": 1.3,
-            "thumb_src": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/da/a9/daa9473c30648883b9dfb50b58cded93a6fffdb2.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
+            "imageUrl": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/da/a9/daa9473c30648883b9dfb50b58cded93a6fffdb2.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
         },
         {
             "id": 2,
             "url": "product-3",
             "heading": "blue jumper",
             "spacing": 1.2,
-            "thumb_src": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/7c/73/7c73655b3ddccf70f224afe5cb15fb79cd7b3ac3.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
+            "imageUrl": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/7c/73/7c73655b3ddccf70f224afe5cb15fb79cd7b3ac3.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
         },
         {
             "id": 3,
             "url": "product-4",
             "heading": "green jumper",
             "spacing": 1.3,
-            "thumb_src": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/ac/a4/aca41b65e005ca96092b523da3eb57ad0abad03f.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
+            "imageUrl": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/ac/a4/aca41b65e005ca96092b523da3eb57ad0abad03f.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
         },
         {
             "id": 4,
             "url": "product-5",
             "heading": "grey t-shirt",
             "spacing": 1.5,
-            "thumb_src": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/4b/4c/4b4c3eb25c5a5f4033dd327dc9626358f10c01a3.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
+            "imageUrl": "https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B2%5D&set=key%5Bresolve.width%5D,value%5B3300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&set=key%5Bresolve.quality%5D,value%5B70%5D&set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/4b/4c/4b4c3eb25c5a5f4033dd327dc9626358f10c01a3.jpg%5D,type%5BLOOKBOOK%5D&call=url%5Bfile:/product/dynamic.chain%5D"
         }
     ]
 }

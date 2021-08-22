@@ -125,8 +125,8 @@ function main() {
 
     load() {
       let { imgElement } = this;
-      if (imgElement.src !== this.descriptor.thumb_src) {
-        imgElement.src = this.descriptor.thumb_src;
+      if (imgElement.src !== this.descriptor.imageUrl) {
+        imgElement.src = this.descriptor.imageUrl;
         imgElement.onload = () => {
           this.update();
           this.rootElement.classList.toggle('hidden', false);
@@ -155,27 +155,6 @@ function main() {
 
       let updateValueX = this.x * this.descriptor.spacing;
       let updateValueY = this.y * this.descriptor.spacing;
-
-      // if (this.rootElement.className === 'card card-product-1') {
-      //   updateValueX = this.x * 1.4;
-      //   updateValueY = this.y * 1.4;
-      // }
-      // if (this.rootElement.className === 'card card-product-2') {
-      //   updateValueX = this.x * 1.3;
-      //   updateValueY = this.y * 1.3;
-      // }
-      // if (this.rootElement.className === 'card card-product-3') {
-      //   updateValueX = this.x * 1.2;
-      //   updateValueY = this.y * 1.2;
-      // }
-      // if (this.rootElement.className === 'card card-product-4') {
-      //   updateValueX = this.x * 1.3;
-      //   updateValueY = this.y * 1.3;
-      // }
-      // if (this.rootElement.className === 'card card-product-5') {
-      //   updateValueX = this.x * 1.5;
-      //   updateValueY = this.y * 1.5;
-      // }
 
       cssBatch += `transform: translate3d(${updateValueX}px, ${updateValueY}px, 0);`;
       //   cssBatch += 'display:' + (this._visible ? 'block;' : 'none;');
