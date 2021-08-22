@@ -24,21 +24,21 @@
       "id": 3,
       "url": "product-4",
       "heading": "green jumper",
-      "spacing": 1.3,
+      "spacing": 1.7,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6010642ada47c1c7d06db3dd_RockBackg4.jpg"
     },
     {
       "id": 4,
       "url": "product-5",
       "heading": "grey t-shirt",
-      "spacing": 1.5,
+      "spacing": 1.9,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/5e9ffad1578be5547e0c73b9_Background%20take%20red%20Blurred-p-800.jpeg"
     },
 
     {
       "id": 5,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1.1,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dce3ccadc27776426e3_image1776-0.png"
     },
     {
@@ -50,31 +50,31 @@
     {
       "id": 7,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1.9,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcdee27ae8926596819_path5119.png"
     },
     {
       "id": 8,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 2,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcdee27ae8926596819_path5119.png"
     },
     {
       "id": 9,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1.5,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcce105914b02d55b3c_image1850.png"
     },
     {
       "id": 10,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1.6,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcce9da05d4aad8b554_image1762.png"
     },
     {
       "id": 11,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1.7,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcce9da05faabd8b553_image3989.png"
     },
     {
@@ -92,7 +92,7 @@
     {
       "id": 14,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1.9,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcc7754cbb7f96202ee_g1830.png"
     },
     {
@@ -104,7 +104,7 @@
     {
       "id": 17,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1.8,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcc7754cb4fd26202ed_path1868.png"
     },
     {
@@ -116,7 +116,7 @@
     {
       "id": 19,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 1,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcce4b96cbc86555a30_path1832.png"
     },
     {
@@ -128,13 +128,13 @@
     {
       "id": 21,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 2,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcb62dde007a2cdbedc_g1901.png"
     },
     {
       "id": 22,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 2,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcb8a6e609904051b3a_g2042-p-500.png"
     }
   ]
