@@ -49,10 +49,9 @@ body {
 .card {
   transition: opacity 0.5s;
   opacity: 1;
-  overflow: hidden;
   position: absolute;
-  width: 474px;
-  height: 474px;
+  width: 200px;
+  height: 200px;
   overflow: initial;
 }
 

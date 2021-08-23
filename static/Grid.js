@@ -1,7 +1,6 @@
-const GALLERY_JSON =
-  'https://raw.githubusercontent.com/ioetbc/arc-ggd/main/static/gallery.json';
-const CARD_WIDTH = 474;
-const CARD_HEIGHT = 474;
+const GALLERY_JSON = '../static/gallery.json';
+const CARD_WIDTH = 200;
+const CARD_HEIGHT = 200;
 const FIXED_ROWS = 4;
 const FIXED_COLS = 4;
 
@@ -64,6 +63,55 @@ function main() {
         this.onDragCallback(xDelta, yDelta);
         this.lastX = e.clientX;
         this.lastY = e.clientY;
+      } else {
+        // they are moving the mouse to a hot spot
+        const topRightZone = {
+          right: window.innerWidth - window.innerWidth / 3,
+          top: (window.innerHeight - window.innerHeight / 3) / 3,
+        };
+
+        const bottomRightZone = {
+          right: window.innerWidth - window.innerWidth / 3,
+          bottom: window.innerHeight - window.innerHeight / 3,
+        };
+
+        const bottomLeftZone = {
+          left: window.innerWidth - window.innerWidth / 3,
+          bottom: window.innerHeight - window.innerHeight / 3,
+        };
+
+        const topLeftZone = {
+          left: window.innerWidth - window.innerWidth / 3,
+          top: (window.innerHeight - window.innerHeight / 3) / 3,
+        };
+
+        const isInTopRightZone =
+          e.clientX >= topRightZone.right && e.clientY <= topRightZone.top;
+
+        const isInBottomRightZone =
+          e.clientX >= bottomRightZone.right &&
+          e.clientY >= bottomRightZone.bottom;
+
+        const isInBottomLeftZone =
+          e.clientX <= bottomLeftZone.left &&
+          e.clientY >= bottomRightZone.bottom;
+
+        const isInTopLeftZone =
+          e.clientX <= topLeftZone.left && e.clientY <= topLeftZone.top;
+
+        if (isInTopRightZone) {
+          console.log('moved to the top right zone');
+        }
+
+        if (isInBottomRightZone) {
+          console.log('moved to the bottom right zone');
+        }
+        if (isInBottomLeftZone) {
+          console.log('moved to the bottom left zone');
+        }
+        if (isInTopLeftZone) {
+          console.log('moved to the top left zone');
+        }
       }
     }
 
@@ -143,7 +191,6 @@ function main() {
 
     appendTo(el) {
       if (this.rootElement.parentElement !== el) {
-        //console.log('append');
         el.appendChild(this.rootElement);
         this.load();
       }
@@ -205,7 +252,6 @@ function main() {
 
     onDrag(deltaX, deltaY) {
       //this.DOMElement.classList.remove( "hover-enabled" );
-      //console.log( e );
       this.offsetX += deltaX;
       this.offsetY += deltaY;
       this.updateGrid();
