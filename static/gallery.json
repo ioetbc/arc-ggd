@@ -117,7 +117,7 @@
     {
       "id": 18,
       "heading": "x",
-      "spacing": 1.3,
+      "spacing": 0.5,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dcc20e4ae16ca581238_path1874.png"
     },
     {
@@ -154,7 +154,7 @@
       "id": 45,
       "heading": "x",
       "spacing": 1.3,
-      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/61227dca86b5f928fb0acc99_g3369.png"
+      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6123dbf6e45a686b67f2d0ac_ggd%20barbed.png"
     },
      {
       "id": 23,
@@ -208,7 +208,7 @@
       "id": 31,
       "heading": "x",
       "spacing": 1.2,
-      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6122cf3b35c7973585e17743_g3010.png"
+      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6123e036890cb958fdcd3442_pletter%20ink.png"
     },
      {
       "id": 32,
@@ -221,12 +221,6 @@
       "heading": "x",
       "spacing": 0.9,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6122cf3bc954847950e8b46d_jbkbj.png"
-    },
-     {
-      "id": 34,
-      "heading": "x",
-      "spacing": 0.5,
-      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6122cf3c3ccadc07a86650b4_asf.png"
     },
      {
       "id": 35,
@@ -281,6 +275,12 @@
       "heading": "x",
       "spacing": 1.3,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6122cf40ee2857127e22c724_image935.png"
-    }
+    },
+     {
+      "id": 46,
+      "heading": "x",
+      "spacing": 2,
+      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6123e035b47c2b62a5527d44_text932.png"
+     }
   ]
 }
