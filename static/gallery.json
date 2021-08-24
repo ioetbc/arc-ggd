@@ -13,12 +13,6 @@
       "spacing": 1.4, 
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6010642abe743a739486b5a2_RockBackg1-p-500.jpeg"
     },
-        {
-      "id": 0,
-      "heading": "striped top",
-      "spacing": 0.5, 
-      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/612555bbf9d7d282dc3da570_Arc%20Cadence%20700x935.jpg"
-    },
     {
       "id": 1,
       "url": "product-2",
@@ -28,10 +22,10 @@
     },
     {
       "id": 2,
-      "url": "product-3",
+      "url": "luxury-echelon",
       "heading": "blue jumper",
-      "spacing": 1.2,
-      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6010642a11a9af86cd880086_RockBackg5.jpg"
+      "spacing": 0.5,
+      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/612555bbf9d7d282dc3da570_Arc%20Cadence%20700x935.jpg"
     },
     {
       "id": 3,
