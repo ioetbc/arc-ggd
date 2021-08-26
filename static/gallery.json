@@ -7,6 +7,13 @@
       "spacing": 1,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/60102cf6f7575575a9355d75_burning car reversed 2-transcode.mp4"
     },
+       {
+      "id": 2,
+      "url": "clothing-pages/luxury-echelon",
+      "heading": "blue jumper",
+      "spacing": 2.5,
+      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/612555bbf9d7d282dc3da570_Arc%20Cadence%20700x935.jpg"
+    },
     {
       "id": 1,
       "url": "product-2",
@@ -266,13 +273,6 @@
       "heading": "x",
       "spacing": 2,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6123e035b47c2b62a5527d44_text932.png"
-    },
-   {
-      "id": 2,
-      "url": "clothing-pages/luxury-echelon",
-      "heading": "blue jumper",
-      "spacing": 2.5,
-      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/612555bbf9d7d282dc3da570_Arc%20Cadence%20700x935.jpg"
     }
   ]
 }
