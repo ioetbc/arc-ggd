@@ -45,6 +45,7 @@ function main() {
     onMove(e) {
       // if (this.dragging) {
       e = e.type == 'touchmove' ? e.touches[0] : e;
+
       let xDelta = e.wheelDeltaX * -1 - this.lastX;
       let yDelta = e.wheelDeltaY * -1 - this.lastY;
 
@@ -95,7 +96,7 @@ function main() {
         el.addEventListener('touchend', this.onEnd.bind(this), false);
       } else {
         // el.addEventListener('mousedown', this.onStart.bind(this), false);
-        el.addEventListener('mousewheel', this.onMove.bind(this), false);
+        el.addEventListener('wheel', this.onMove.bind(this), false);
         // el.addEventListener('scroll', this.onMove.bind(this), false);
         // el.addEventListener('mouseup', this.onEnd.bind(this), false);
       }
