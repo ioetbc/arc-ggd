@@ -1,4 +1,5 @@
-const GALLERY_JSON = '../static/gallery.json';
+const GALLERY_JSON =
+  'https://raw.githubusercontent.com/ioetbc/arc-ggd/main/static/gallery.json';
 const CARD_WIDTH = 200;
 const CARD_HEIGHT = 200;
 const FIXED_ROWS = 4;
@@ -42,77 +43,28 @@ function main() {
     }
 
     onMove(e) {
-      if (this.dragging) {
-        e = e.type == 'touchmove' ? e.touches[0] : e;
-        let xDelta = e.clientX - this.lastX;
-        let yDelta = e.clientY - this.lastY;
-        let velocity = Math.abs(xDelta * yDelta);
-        if (velocity > 50) {
-          //this.dragging = false;
-          let v = { x: xDelta * 0.5, y: yDelta * 0.5 };
-          if (this.tween) this.tween.kill();
-          this.tween = TweenMax.to(v, 0.5, {
-            x: 0,
-            y: 0,
-            onUpdate: () => {
-              this.onDragCallback(v.x, v.y);
-            },
-          });
-        }
+      // if (this.dragging) {
+      e = e.type == 'touchmove' ? e.touches[0] : e;
+      let xDelta = e.wheelDeltaX * -1 - this.lastX;
+      let yDelta = e.wheelDeltaY * -1 - this.lastY;
 
-        this.onDragCallback(xDelta, yDelta);
-        this.lastX = e.clientX;
-        this.lastY = e.clientY;
-      } else {
-        // they are moving the mouse to a hot spot
-        const topRightZone = {
-          right: window.innerWidth - window.innerWidth / 3,
-          top: (window.innerHeight - window.innerHeight / 3) / 3,
-        };
-
-        const bottomRightZone = {
-          right: window.innerWidth - window.innerWidth / 3,
-          bottom: window.innerHeight - window.innerHeight / 3,
-        };
-
-        const bottomLeftZone = {
-          left: window.innerWidth - window.innerWidth / 3,
-          bottom: window.innerHeight - window.innerHeight / 3,
-        };
-
-        const topLeftZone = {
-          left: window.innerWidth - window.innerWidth / 3,
-          top: (window.innerHeight - window.innerHeight / 3) / 3,
-        };
-
-        const isInTopRightZone =
-          e.clientX >= topRightZone.right && e.clientY <= topRightZone.top;
-
-        const isInBottomRightZone =
-          e.clientX >= bottomRightZone.right &&
-          e.clientY >= bottomRightZone.bottom;
-
-        const isInBottomLeftZone =
-          e.clientX <= bottomLeftZone.left &&
-          e.clientY >= bottomRightZone.bottom;
-
-        const isInTopLeftZone =
-          e.clientX <= topLeftZone.left && e.clientY <= topLeftZone.top;
-
-        if (isInTopRightZone) {
-          console.log('moved to the top right zone');
-        }
-
-        if (isInBottomRightZone) {
-          console.log('moved to the bottom right zone');
-        }
-        if (isInBottomLeftZone) {
-          console.log('moved to the bottom left zone');
-        }
-        if (isInTopLeftZone) {
-          console.log('moved to the top left zone');
-        }
+      let velocity = Math.abs(xDelta * yDelta);
+      if (velocity > 50) {
+        //this.dragging = false;
+        let v = { x: xDelta * 0.5, y: yDelta * 0.5 };
+        if (this.tween) this.tween.kill();
+        this.tween = TweenMax.to(v, 0.5, {
+          x: 0,
+          y: 0,
+          onUpdate: () => {
+            this.onDragCallback(v.x, v.y);
+          },
+        });
       }
+
+      this.onDragCallback(xDelta, yDelta);
+      this.lastX = e.wheelDeltaX;
+      this.lastY = e.wheelDeltaY;
     }
 
     onStart(e) {
@@ -142,9 +94,10 @@ function main() {
         el.addEventListener('touchmove', this.onMove.bind(this), false);
         el.addEventListener('touchend', this.onEnd.bind(this), false);
       } else {
-        el.addEventListener('mousedown', this.onStart.bind(this), false);
-        el.addEventListener('mousemove', this.onMove.bind(this), false);
-        el.addEventListener('mouseup', this.onEnd.bind(this), false);
+        // el.addEventListener('mousedown', this.onStart.bind(this), false);
+        el.addEventListener('mousewheel', this.onMove.bind(this), false);
+        // el.addEventListener('scroll', this.onMove.bind(this), false);
+        // el.addEventListener('mouseup', this.onEnd.bind(this), false);
       }
     }
   }
