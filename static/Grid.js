@@ -46,8 +46,8 @@ function main() {
       // if (this.dragging) {
       e = e.type == 'touchmove' ? e.touches[0] : e;
 
-      let xDelta = e.wheelDeltaX * -1 - this.lastX;
-      let yDelta = e.wheelDeltaY * -1 - this.lastY;
+      let xDelta = e.deltaX * -1 - this.lastX;
+      let yDelta = e.deltaY * -1 - this.lastY;
 
       let velocity = Math.abs(xDelta * yDelta);
       if (velocity > 50) {
@@ -64,8 +64,8 @@ function main() {
       }
 
       this.onDragCallback(xDelta, yDelta);
-      this.lastX = e.wheelDeltaX;
-      this.lastY = e.wheelDeltaY;
+      this.lastX = e.deltaX;
+      this.lastY = e.deltaY;
     }
 
     onStart(e) {
@@ -96,7 +96,8 @@ function main() {
         el.addEventListener('touchend', this.onEnd.bind(this), false);
       } else {
         // el.addEventListener('mousedown', this.onStart.bind(this), false);
-        el.addEventListener('wheel', this.onMove.bind(this), false);
+        // el.addEventListener('wheelEvent', this.onMove.bind(this), false);
+        el.onwheel = this.onMove.bind(this);
         // el.addEventListener('scroll', this.onMove.bind(this), false);
         // el.addEventListener('mouseup', this.onEnd.bind(this), false);
       }
