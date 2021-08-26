@@ -15,13 +15,6 @@
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6010642a11a9af86cd880086_RockBackg5.jpg"
     },
     {
-      "id": 2,
-      "url": "clothing-pages/luxury-echelon",
-      "heading": "blue jumper",
-      "spacing": 0.5,
-      "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/612555bbf9d7d282dc3da570_Arc%20Cadence%20700x935.jpg"
-    },
-    {
       "id": 3,
       "url": "product-4",
       "heading": "green jumper",
@@ -274,11 +267,11 @@
       "spacing": 2,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/6123e035b47c2b62a5527d44_text932.png"
     },
-    {
-      "id": 47,
-      "heading": "x",
+   {
+      "id": 2,
       "url": "clothing-pages/luxury-echelon",
-      "spacing": 2.6,
+      "heading": "blue jumper",
+      "spacing": 2.5,
       "imageUrl": "https://uploads-ssl.webflow.com/5e9fe777748507384627888f/612555bbf9d7d282dc3da570_Arc%20Cadence%20700x935.jpg"
     }
   ]
