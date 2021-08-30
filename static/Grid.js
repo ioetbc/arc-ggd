@@ -1,20 +1,8 @@
-const GALLERY_JSON =
-  'https://raw.githubusercontent.com/ioetbc/arc-ggd/main/static/gallery.json';
+const GALLERY_JSON = '../static/gallery.json';
 const CARD_WIDTH = 200;
 const CARD_HEIGHT = 200;
 const FIXED_ROWS = 4;
 const FIXED_COLS = 4;
-
-const NEIGHBOURS = [
-  [0, -1], // up
-  [0, 1], // down
-  [1, 0], // right
-  [-1, 0], // left
-  [1, 1], // bottom right
-  [-1, 1], // bottom left
-  [-1, -1], // upper left
-  [1, -1], // upper right
-];
 
 function main() {
   function LoadJSON(url, callback) {
@@ -29,29 +17,22 @@ function main() {
     req.send(null);
   }
 
-  class SimpleDrag {
+  class MouseMove {
     constructor(DOMElement, onDrag) {
-      this.useTouch = this.isTouch();
-      this.dragging = false;
       this.lastX = 0;
       this.lastY = 0;
       this.tween = undefined;
-      this.prevVelocity = 0;
       this.DOMElement = DOMElement;
       this.onDragCallback = onDrag;
-      this.bind();
+      this.DOMElement.onwheel = this.onMove.bind(this);
     }
 
     onMove(e) {
-      // if (this.dragging) {
-      e = e.type == 'touchmove' ? e.touches[0] : e;
-
       let xDelta = e.deltaX * -1 - this.lastX;
       let yDelta = e.deltaY * -1 - this.lastY;
-
       let velocity = Math.abs(xDelta * yDelta);
+
       if (velocity > 50) {
-        //this.dragging = false;
         let v = { x: xDelta * 0.5, y: yDelta * 0.5 };
         if (this.tween) this.tween.kill();
         this.tween = TweenMax.to(v, 0.5, {
@@ -66,41 +47,6 @@ function main() {
       this.onDragCallback(xDelta, yDelta);
       this.lastX = e.deltaX;
       this.lastY = e.deltaY;
-    }
-
-    onStart(e) {
-      e = e.type == 'touchstart' ? e.touches[0] : e;
-      this.lastX = e.clientX;
-      this.lastY = e.clientY;
-      this.dragging = true;
-    }
-
-    onEnd(e) {
-      this.dragging = false;
-    }
-
-    isTouch() {
-      // return (
-      //   'ontouchstart' in window ||
-      //   navigator.maxTouchPoints > 0 ||
-      //   navigator.msMaxTouchPoints > 0
-      // );
-      false;
-    }
-
-    bind() {
-      let el = this.DOMElement;
-      if (this.useTouch) {
-        el.addEventListener('touchstart', this.onStart.bind(this), false);
-        el.addEventListener('touchmove', this.onMove.bind(this), false);
-        el.addEventListener('touchend', this.onEnd.bind(this), false);
-      } else {
-        // el.addEventListener('mousedown', this.onStart.bind(this), false);
-        // el.addEventListener('wheelEvent', this.onMove.bind(this), false);
-        el.onwheel = this.onMove.bind(this);
-        // el.addEventListener('scroll', this.onMove.bind(this), false);
-        // el.addEventListener('mouseup', this.onEnd.bind(this), false);
-      }
     }
   }
 
@@ -123,7 +69,6 @@ function main() {
         this.imgElement = document.createElement('img');
       }
       this.rootElement.classList.add('card');
-      this.rootElement.classList.add(`card-${this.descriptor.url}`);
       if (!!this.descriptor.url) {
         this.rootElement.addEventListener('click', () => {
           window.location.href = `${this.descriptor.url}`;
@@ -133,11 +78,9 @@ function main() {
     }
 
     load() {
-      let { imgElement } = this;
-      if (imgElement.src !== this.descriptor.imageUrl) {
-        imgElement.src = this.descriptor.imageUrl;
-
-        imgElement.onload = () => {
+      if (this.imgElement.src !== this.descriptor.imageUrl) {
+        this.imgElement.src = this.descriptor.imageUrl;
+        this.imgElement.onload = () => {
           this.update();
           this.rootElement.classList.toggle('hidden', false);
         };
@@ -160,15 +103,23 @@ function main() {
     }
 
     update() {
-      let cssBatch = '';
-
-      let updateValueX = this.x * this.descriptor.spacing;
-      let updateValueY = this.y * this.descriptor.spacing;
-
-      cssBatch += `transform: translate3d(${updateValueX}px, ${updateValueY}px, 0);`;
-      //   cssBatch += 'display:' + (this._visible ? 'block;' : 'none;');
-
-      this.rootElement.setAttribute('style', cssBatch);
+      let updateValueX = this.x * this.descriptor.speed;
+      let updateValueY = this.y * this.descriptor.speed;
+      this.rootElement.setAttribute(
+        'style',
+        `transform: translate3d(${updateValueX}px, ${updateValueY}px, 0);`
+      );
+      // const shadow = this.descriptor.shadow;
+      // if (!!shadow) {
+      //   this.imgElement.setAttribute(
+      //     'style',
+      //     `box-shadow: 0 ${shadow * 10}px ${
+      //       shadow * 20
+      //     }px rgba(0,0,0,0.30), 0 ${shadow * 7}px ${
+      //       shadow * 6
+      //     }px rgba(0,0,0,0.22);`
+      //   );
+      // }
     }
   }
 
@@ -176,11 +127,7 @@ function main() {
     constructor(DOMElement, JSONGallery) {
       this.descriptors = JSONGallery.images;
       this.DOMElement = DOMElement;
-      // dict to save previous assignations by col and row
-      this.picks = {};
-      // current visible cards
       this.cards = {};
-      // all elements are cached and reused
       this.cardsPool = [];
       this.offsetX = 0;
       this.offsetY = 0;
@@ -188,25 +135,16 @@ function main() {
       this.viewRows = 0;
       this.viewWidth = 0;
       this.viewHeight = 0;
+      this.allCards;
     }
 
     init() {
       window.addEventListener('resize', this.onResize.bind(this));
       this.onResize();
-      let d = new SimpleDrag(this.DOMElement, this.onDrag.bind(this));
-    }
-
-    getGalleryDescriptor(index) {
-      return this.descriptors[index % this.descriptors.length];
-    }
-
-    onDragEnd() {
-      //this.DOMElement.classList.remove( "hover-enabled" );
-      //this.DOMElement.classList.add( "hover-enabled" );
+      new MouseMove(this.DOMElement, this.onDrag.bind(this));
     }
 
     onDrag(deltaX, deltaY) {
-      //this.DOMElement.classList.remove( "hover-enabled" );
       this.offsetX += deltaX;
       this.offsetY += deltaY;
       this.updateGrid();
@@ -233,39 +171,6 @@ function main() {
       );
     }
 
-    getRandomSafe(col, row) {
-      let pick;
-      let tries = 0;
-      let i = 0;
-
-      while (pick === undefined) {
-        let rnd = ~~(Math.random() * 10000);
-        let item = this.getGalleryDescriptor(rnd);
-        for (i = 0; i < NEIGHBOURS.length; i++) {
-          let offsets = NEIGHBOURS[i];
-          let key = `${col + offsets[0]}:${row + offsets[1]}`;
-          if (this.picks[key] === item) {
-            break;
-          }
-        }
-
-        if (tries++ > 20 || i === NEIGHBOURS.length) {
-          pick = item;
-        }
-      }
-
-      return pick;
-    }
-
-    getRandomDescriptor(col, row) {
-      let key = `${col}:${row}`;
-      if (!this.picks[key]) {
-        let item = this.getRandomSafe(col, row);
-        this.picks[key] = item;
-      }
-      return this.picks[key];
-    }
-
     getCardPos(col, row) {
       let offsetX = this.offsetX % CARD_WIDTH;
       let offsetY = this.offsetY % CARD_HEIGHT;
@@ -283,13 +188,8 @@ function main() {
           let desc = undefined;
           let tCol = colOffset + col;
           let tRow = rowOffset + row;
-          if (tCol > 0 && tRow > 0 && tCol < FIXED_COLS && tRow < FIXED_ROWS) {
-            let index = tRow * FIXED_COLS + tCol;
-            desc = this.getGalleryDescriptor(index);
-          } else {
-            desc = this.getRandomDescriptor(tCol, tRow);
-          }
-
+          let index = Math.abs(tRow * FIXED_COLS + tCol);
+          desc = this.descriptors[index % this.descriptors.length];
           let [x, y] = this.getCardPos(col, row);
 
           if (this.isVisible(x, y)) {
@@ -330,7 +230,7 @@ function main() {
   }
 
   LoadJSON(GALLERY_JSON, (gallery) => {
-    let grid = new Grid(document.getElementById('js-grid'), gallery);
+    const grid = new Grid(document.getElementById('js-grid'), gallery);
     grid.init();
   });
 }
