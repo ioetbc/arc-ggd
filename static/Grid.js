@@ -192,7 +192,9 @@ function main() {
 
     init() {
       window.addEventListener('resize', this.onResize.bind(this));
-      this.onResize();
+      setTimeout(() => {
+        this.onResize();
+      }, 2000)
       let d = new SimpleDrag(this.DOMElement, this.onDrag.bind(this));
     }
 
