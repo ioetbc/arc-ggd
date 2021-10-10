@@ -192,10 +192,8 @@ function main() {
 
     init() {
       window.addEventListener('resize', this.onResize.bind(this));
-      setTimeout(() => {
-        this.onResize();
-      }, 2000)
-      let d = new SimpleDrag(this.DOMElement, this.onDrag.bind(this));
+      this.onResize();
+      new SimpleDrag(this.DOMElement, this.onDrag.bind(this));
     }
 
     getGalleryDescriptor(index) {
@@ -332,6 +330,8 @@ function main() {
   }
 
   LoadJSON(GALLERY_JSON, (gallery) => {
+    const hasGridLoaded = document.getElementById('js-grid');
+    if (!hasGridLoaded) return
     let grid = new Grid(document.getElementById('js-grid'), gallery);
     grid.init();
   });
